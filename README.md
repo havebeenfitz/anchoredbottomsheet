@@ -62,6 +62,7 @@ bottomSheetViewController.delegate = sel
 bottomSheetViewController.present(from: self)
 ```
 
+### This libraty uses a SnapKit as Subdependency, please be aware
 
 ## Author
 
