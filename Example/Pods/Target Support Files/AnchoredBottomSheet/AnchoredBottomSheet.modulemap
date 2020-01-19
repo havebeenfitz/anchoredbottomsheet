@@ -1,0 +1,6 @@
+framework module AnchoredBottomSheet {
+  umbrella header "AnchoredBottomSheet-umbrella.h"
+
+  export *
+  module * { export * }
+}

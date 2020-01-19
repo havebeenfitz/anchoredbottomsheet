@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6121245355D0CF5A8F9BD71A /* Pods_AnchoredBottomSheet_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE882343F97C312DDF716D9 /* Pods_AnchoredBottomSheet_Tests.framework */; };
 		68C5D9F26574352F8B99ADD2 /* Pods_AnchoredBottomSheet_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3B67AE4F3F4B7E541B682 /* Pods_AnchoredBottomSheet_Example.framework */; };
+		E4055F9323D49E5900F69638 /* ExampleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4055F9223D49E5900F69638 /* ExampleTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		2FE882343F97C312DDF716D9 /* Pods_AnchoredBottomSheet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnchoredBottomSheet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A69CC7D8BC6FBEAE899ED41 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3A69CC7D8BC6FBEAE899ED41 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		491959A6EC54D8E4ECFCB3D2 /* Pods-AnchoredBottomSheet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnchoredBottomSheet_Example.release.xcconfig"; path = "Target Support Files/Pods-AnchoredBottomSheet_Example/Pods-AnchoredBottomSheet_Example.release.xcconfig"; sourceTree = "<group>"; };
 		54F3B67AE4F3F4B7E541B682 /* Pods_AnchoredBottomSheet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnchoredBottomSheet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* AnchoredBottomSheet_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnchoredBottomSheet_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,9 +44,11 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6DBDA82A7319328A221DAAAE /* Pods-AnchoredBottomSheet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnchoredBottomSheet_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AnchoredBottomSheet_Tests/Pods-AnchoredBottomSheet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CE54F6ED607AE13FFBE9120A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		CE54F6ED607AE13FFBE9120A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D6CC9C4F8DB4F8DFB79A3377 /* Pods-AnchoredBottomSheet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnchoredBottomSheet_Tests.release.xcconfig"; path = "Target Support Files/Pods-AnchoredBottomSheet_Tests/Pods-AnchoredBottomSheet_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EE73E4508CC93EBC20911AE9 /* AnchoredBottomSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AnchoredBottomSheet.podspec; path = ../AnchoredBottomSheet.podspec; sourceTree = "<group>"; };
+		E4055F9223D49E5900F69638 /* ExampleTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDataSource.swift; sourceTree = "<group>"; };
+		E4055F9823D4A1D800F69638 /* AnchoredBottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnchoredBottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE73E4508CC93EBC20911AE9 /* AnchoredBottomSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AnchoredBottomSheet.podspec; path = ../AnchoredBottomSheet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F1611D96813814F41D460399 /* Pods-AnchoredBottomSheet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnchoredBottomSheet_Example.debug.xcconfig"; path = "Target Support Files/Pods-AnchoredBottomSheet_Example/Pods-AnchoredBottomSheet_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +96,7 @@
 		607FACD21AFB9204008FA782 /* Example for AnchoredBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				E4055F9123D49A9D00F69638 /* DataSources */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -147,17 +151,25 @@
 				6DBDA82A7319328A221DAAAE /* Pods-AnchoredBottomSheet_Tests.debug.xcconfig */,
 				D6CC9C4F8DB4F8DFB79A3377 /* Pods-AnchoredBottomSheet_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		B6C54C20114D8D213834F688 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4055F9823D4A1D800F69638 /* AnchoredBottomSheet.framework */,
 				54F3B67AE4F3F4B7E541B682 /* Pods_AnchoredBottomSheet_Example.framework */,
 				2FE882343F97C312DDF716D9 /* Pods_AnchoredBottomSheet_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4055F9123D49A9D00F69638 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				E4055F9223D49E5900F69638 /* ExampleTableViewDataSource.swift */,
+			);
+			name = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +239,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -270,10 +283,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AnchoredBottomSheet_Example/Pods-AnchoredBottomSheet_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AnchoredBottomSheet/AnchoredBottomSheet.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnchoredBottomSheet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4055F9323D49E5900F69638 /* ExampleTableViewDataSource.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -419,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -479,12 +495,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AnchoredBottomSheet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -494,12 +511,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AnchoredBottomSheet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
