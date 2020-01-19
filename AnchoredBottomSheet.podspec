@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AnchoredBottomSheet'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'iOS Maps like bottom sheet with configurable anchors and reusable pannable View'
 
 # This description is used to generate tags and improve search results.
@@ -32,11 +32,8 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'AnchoredBottomSheet/Classes/**/*'
   
-   s.resource_bundles = {
-     'AnchoredBottomSheet' => ['AnchoredBottomSheet/Assets/iconClose.pdf']
-   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'SnapKit', '~> 5.0'
+  s.resource_bundles = {
+    'AnchoredBottomSheet' => ['AnchoredBottomSheet/Assets/*']
+  }
+  s.dependency 'SnapKit', '~> 5.0'
 end
