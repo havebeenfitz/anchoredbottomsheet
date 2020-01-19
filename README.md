@@ -58,7 +58,7 @@ If you want to implement general pop-up behaviour, you should use `BottomSheetVi
 ```swift
 let bottomSheetViewController = BottomSheetViewController(bottomSheetView: bottomSheetView)
         
-bottomSheetViewController.delegate = sel
+bottomSheetViewController.delegate = self
 bottomSheetViewController.present(from: self)
 ```
 
