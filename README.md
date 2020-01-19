@@ -26,7 +26,7 @@ This is iOS Maps like anchored bottom sheet with configurable anchors and reusab
 
 `BottomSheetViewController` is intended to be used as a modal presented controller.
 
-To configure `BottomSheetView` you should use `BottomSheetViewConfiguration` struct like follwing:
+To configure `BottomSheetView` you should use `BottomSheetViewConfiguration` struct like this:
 
 ```swift
 let configuration = BottomSheetViewConfiguration(contentView: data.tableView,
@@ -47,7 +47,7 @@ Supported anchors:
 Each anchor has associated value, which will override default height for this anchor.
 By content mode is not yet implemented, feel free to open a pull request.
 
-When configuration is done, create `BottomSheetView` like this:
+Once configuration is done, you should create `BottomSheetView` like this:
 ```swift
 let bottomSheetView = BottomSheetView(configuration: configuration)
 ```
