@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AnchoredBottomSheet_Example' do
+  pod 'AnchoredBottomSheet', :path => '../'
+
+  target 'AnchoredBottomSheet_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
