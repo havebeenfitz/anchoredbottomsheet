@@ -24,7 +24,7 @@ This is iOS Maps like anchored bottom sheet with configurable anchors and reusab
 
 `BottomSheetView` supports all kinds of `UIView's` including `UIScrollView` and it's ancestors as a container view.
 
-`BottomSheetViewController` is intended to use as a modal presented controller.
+`BottomSheetViewController` is intended to be used as a modal presented controller.
 
 To configure `BottomSheetView` you should use `BottomSheetViewConfiguration` struct like follwing:
 
