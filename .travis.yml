@@ -9,6 +9,9 @@ podfile: Example/Podfile
 before_install:
  - gem install cocoapods # Since Travis is not always on latest version
  - pod install --project-directory=Example
+xcode_project: Example/AnchoredBottomSheet.xcodeproj # path to your xcodeproj folder
+xcode_scheme: AnchoredBottomSheet-Example
+xcode_destination: platform=iOS Simulator,OS=13.2,name=iPad Pro (9.7-inch)
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/AnchoredBottomSheet.xcworkspace -scheme AnchoredBottomSheet-Example -sdk iphonesimulator13.2 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild -destination "platform=iOS Simulator,OS=13.3,name=iPad Pro (9.7-inch)" -workspace Example/AnchoredBottomSheet.xcworkspace -scheme AnchoredBottomSheet-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
