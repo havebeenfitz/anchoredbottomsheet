@@ -16,7 +16,8 @@ pod 'AnchoredBottomSheet'
 
 ## About
 
-<img width="300" alt="Screenshot 2020-01-19 at 20 06 23" src="https://user-images.githubusercontent.com/31866271/72685093-ab178580-3af7-11ea-8456-f1eefcd0fa56.png">
+<img width="250" alt="top" src="https://user-images.githubusercontent.com/31866271/72686183-ef5c5300-3b02-11ea-8ba2-a393273eb76d.png"><img width="250" alt="middle" src="https://user-images.githubusercontent.com/31866271/72686162-b6bc7980-3b02-11ea-9b79-7ba7d524695a.png"><img width="250" alt="bottom" src="https://user-images.githubusercontent.com/31866271/72686163-b6bc7980-3b02-11ea-9227-b5954d655104.png">
+
 
 
 This is iOS Maps like anchored bottom sheet with configurable anchors and reusable `BottomSheetView`, that can be used inside provided modal controller or without it.
@@ -43,7 +44,7 @@ Supported anchors:
 3. Bottom
 4. Fixed
 
-Each anchor has associated value, which override default height for this anchor.
+Each anchor has associated value, which will override default height for this anchor.
 By content mode is not yet implemented, feel free to open a pull request.
 
 When configuration is done, create `BottomSheetView` like this:
