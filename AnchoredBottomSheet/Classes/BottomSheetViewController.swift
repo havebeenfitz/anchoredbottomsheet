@@ -102,10 +102,6 @@ public class BottomSheetViewController: UIViewController {
 
 extension BottomSheetViewController: BottomSheetViewDelegate {
     public func heightDidChange(to y: CGFloat) {
-        bottomSheetView.snp.updateConstraints { make in
-            make.height.equalTo(y)
-        }
-        
         UIView.animate(withDuration: 0.1) {
             self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(y / self.view.frame.height)
         }

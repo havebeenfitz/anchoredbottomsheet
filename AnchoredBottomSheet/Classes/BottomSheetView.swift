@@ -34,6 +34,7 @@ public class BottomSheetView: UIView {
     private let contentView: UIView
     private weak var parentViewController: UIViewController?
     private let positions: [BottomSheetViewPosition]
+    private let isSlidingToAppear: Bool
     private let isPullIndicatorNeeded: Bool
     private let isCloseButtonNeeded: Bool
     private let cornerRadius: CGFloat
@@ -56,6 +57,7 @@ public class BottomSheetView: UIView {
         self.parentViewController = configuration.parentViewController
         self.defaultPosition = configuration.defaultPosition
         self.positions = configuration.positions
+        self.isSlidingToAppear = configuration.isSlidingToAppear
         self.isPullIndicatorNeeded = configuration.isPullIndicatorNeeded
         self.isCloseButtonNeeded = configuration.isCloseButtonNeeded
         self.isDismissAllowed = configuration.isDismissAllowed
@@ -181,10 +183,14 @@ public class BottomSheetView: UIView {
             make.height.equalTo(height)
         }
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .allowAnimatedContent, animations: {
-            self.superview?.layoutIfNeeded()
-            self.delegate?.heightDidChange(to: height)
-        })
+        if isSlidingToAppear {
+            UIView.animate(withDuration: 0.2, delay: 0, options: .allowAnimatedContent, animations: {
+                self.superview?.layoutIfNeeded()
+                self.delegate?.heightDidChange(to: height)
+            })
+        } else {
+            delegate?.heightDidChange(to: height)
+        }
     }
     
     private func addPanGesture() {
@@ -198,10 +204,11 @@ public class BottomSheetView: UIView {
         case .began, .possible:
             startPositionY = frame.height
         case .changed:
-            if let scrollView = contentView as? UIScrollView, scrollView.contentOffset.y == 0 {
+            if let scrollView = contentView as? UIScrollView, scrollView.contentOffset.y <= 0 {
                 scrollView.contentOffset.y = 0
             }
-            delegate?.heightDidChange(to: -sender.translation(in: parentViewController?.view).y + startPositionY)
+            let height = -sender.translation(in: parentViewController?.view).y + startPositionY
+            update(height: height)
         case .cancelled, .ended, .failed:
             startPositionY = frame.height
             if sender.velocity(in: parentViewController?.view).y > 1000, isDismissAllowed {

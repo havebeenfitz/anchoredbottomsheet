@@ -21,6 +21,7 @@ class SplitViewController: UIViewController {
                                                   parentViewController: self,
                                                   defaultPosition: .middle(),
                                                   positions: [.top(), .middle(), .bottom()],
+                                                  isSlidingToAppear: false,
                                                   isPullIndicatorNeeded: true,
                                                   isCloseButtonNeeded: false,
                                                   isDismissAllowed: false)
@@ -39,6 +40,11 @@ class SplitViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        bottomSheetView.didSetupConstraints = true
+    }
+    
     private func setup() {
         view.backgroundColor = .red
         view.addSubview(yellowView)
@@ -51,17 +57,13 @@ class SplitViewController: UIViewController {
         
         yellowView.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
-            make.bottom.equalTo(bottomSheetView.snp.top)
+            make.bottom.equalTo(bottomSheetView.snp.top).inset(20)
         }
-        
-        bottomSheetView.didSetupConstraints = true
     }
 }
 
 extension SplitViewController: BottomSheetViewDelegate {
     func heightDidChange(to y: CGFloat) {
-        bottomSheetView.snp.updateConstraints { make in
-            make.height.equalTo(y)
-        }
+        print("Height did change to: \(y)")
     }
 }
