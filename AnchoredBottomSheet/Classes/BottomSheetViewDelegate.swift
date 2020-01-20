@@ -13,6 +13,6 @@ public protocol BottomSheetViewDelegate: class {
     func shouldDismiss(sender: UIView)
 }
 
-extension BottomSheetViewDelegate {
+public extension BottomSheetViewDelegate {
     func shouldDismiss(sender: UIView) {}
 }

@@ -43,6 +43,8 @@ class ViewController: UIViewController {
             presentModalWithStackView()
         case 1:
             presentModalWithTableView()
+        case 2:
+            pushSplitScreen()
         default:
             break
         }
@@ -98,6 +100,10 @@ class ViewController: UIViewController {
         
         data.tableView.reloadData()
     }
+    
+    func pushSplitScreen() {
+        navigationController?.pushViewController(SplitViewController(), animated: true)
+    }
 }
 
 extension ViewController: UITableViewDelegate {
@@ -119,6 +125,9 @@ extension ViewController: UITableViewDataSource {
             return cell
         case 1:
             cell.textLabel?.text = "Present with tableView"
+            return cell
+        case 2:
+            cell.textLabel?.text = "Push \"split screen\""
             return cell
         default:
             return UITableViewCell()

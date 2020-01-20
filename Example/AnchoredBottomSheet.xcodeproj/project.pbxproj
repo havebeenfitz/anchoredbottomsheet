@@ -16,6 +16,7 @@
 		6121245355D0CF5A8F9BD71A /* Pods_AnchoredBottomSheet_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE882343F97C312DDF716D9 /* Pods_AnchoredBottomSheet_Tests.framework */; };
 		68C5D9F26574352F8B99ADD2 /* Pods_AnchoredBottomSheet_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3B67AE4F3F4B7E541B682 /* Pods_AnchoredBottomSheet_Example.framework */; };
 		E4055F9323D49E5900F69638 /* ExampleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4055F9223D49E5900F69638 /* ExampleTableViewDataSource.swift */; };
+		E4FC4C4723D607490003E4EF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FC4C4623D607490003E4EF /* SplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D6CC9C4F8DB4F8DFB79A3377 /* Pods-AnchoredBottomSheet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnchoredBottomSheet_Tests.release.xcconfig"; path = "Target Support Files/Pods-AnchoredBottomSheet_Tests/Pods-AnchoredBottomSheet_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E4055F9223D49E5900F69638 /* ExampleTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDataSource.swift; sourceTree = "<group>"; };
 		E4055F9823D4A1D800F69638 /* AnchoredBottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnchoredBottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4FC4C4623D607490003E4EF /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		EE73E4508CC93EBC20911AE9 /* AnchoredBottomSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AnchoredBottomSheet.podspec; path = ../AnchoredBottomSheet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F1611D96813814F41D460399 /* Pods-AnchoredBottomSheet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnchoredBottomSheet_Example.debug.xcconfig"; path = "Target Support Files/Pods-AnchoredBottomSheet_Example/Pods-AnchoredBottomSheet_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 				E4055F9123D49A9D00F69638 /* DataSources */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				E4FC4C4623D607490003E4EF /* SplitViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -348,6 +351,7 @@
 				E4055F9323D49E5900F69638 /* ExampleTableViewDataSource.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				E4FC4C4723D607490003E4EF /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
