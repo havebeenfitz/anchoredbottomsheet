@@ -26,7 +26,7 @@ public class BottomSheetViewConfiguration {
     /// Can dismiss or not. Not to use with close button
     let isDismissAllowed: Bool
     /// Corner radius of the bottom sheet. Default to 16
-    let cornerRadius: CGFloat = 16
+    let cornerRadius: CGFloat
     
     public init(contentView: UIView,
                 parentViewController: UIViewController?,
@@ -35,7 +35,8 @@ public class BottomSheetViewConfiguration {
                 isSlidingToAppear: Bool = true,
                 isPullIndicatorNeeded: Bool,
                 isCloseButtonNeeded: Bool,
-                isDismissAllowed: Bool) {
+                isDismissAllowed: Bool,
+                cornerRadius: CGFloat = 16) {
         self.contentView = contentView
         self.parentViewController = parentViewController
         self.defaultPosition = defaultPosition
@@ -46,5 +47,7 @@ public class BottomSheetViewConfiguration {
         self.isPullIndicatorNeeded = isPullIndicatorNeeded
         self.isCloseButtonNeeded = isCloseButtonNeeded
         self.isDismissAllowed = isDismissAllowed
+        
+        self.cornerRadius = cornerRadius
     }
 }
