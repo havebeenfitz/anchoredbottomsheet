@@ -14,6 +14,10 @@ it, simply add the following line to your Podfile:
 pod 'AnchoredBottomSheet'
 ```
 
+## Requirements
+
+Xcode 11
+
 ## About
 
 <img width="250" alt="top" src="https://user-images.githubusercontent.com/31866271/72686183-ef5c5300-3b02-11ea-8ba2-a393273eb76d.png"><img width="250" alt="middle" src="https://user-images.githubusercontent.com/31866271/72686162-b6bc7980-3b02-11ea-9b79-7ba7d524695a.png"><img width="250" alt="bottom" src="https://user-images.githubusercontent.com/31866271/72686163-b6bc7980-3b02-11ea-9227-b5954d655104.png">
