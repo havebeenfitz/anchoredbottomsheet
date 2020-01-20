@@ -33,13 +33,15 @@ This is iOS Maps like anchored bottom sheet with configurable anchors and reusab
 To configure `BottomSheetView` you should use `BottomSheetViewConfiguration` struct like this:
 
 ```swift
-let configuration = BottomSheetViewConfiguration(contentView: data.tableView,
-                                                 parentViewController: self,
-                                                 defaultPosition: .middle(),
-                                                 positions: [.middle(), .top(), .bottom()],
-                                                 isPullIndicatorNeeded: true,
-                                                 isCloseButtonNeeded: false,
-                                                 isDismissAllowed: true)
+let config = BottomSheetViewConfiguration(contentView: UIView(),
+                                          parentViewController: self,
+                                          defaultPosition: .middle(),
+                                          positions: [.top(), .middle(), .bottom()],
+                                          isSlidingToAppear: false,
+                                          isPullIndicatorNeeded: true,
+                                          isCloseButtonNeeded: false,
+                                          isDismissAllowed: false,
+                                          cornerRadius: 16)
 ```
 
 Supported anchors: 
