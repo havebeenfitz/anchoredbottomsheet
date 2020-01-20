@@ -20,7 +20,7 @@ public class BottomSheetView: UIView {
             setInitialHeight()
         }
     }
-    weak var delegate: BottomSheetViewDelegate?
+    public weak var delegate: BottomSheetViewDelegate?
     
     // MARK:- Private
     
