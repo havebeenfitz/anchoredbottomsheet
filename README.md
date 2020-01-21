@@ -16,7 +16,7 @@ pod 'AnchoredBottomSheet'
 
 ## Requirements
 
-Xcode 11, iOS deployment target >= 10
+Xcode 11, iOS deployment target ≥ 10
 
 ## About
 
