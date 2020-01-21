@@ -208,7 +208,7 @@ public class BottomSheetView: UIView {
                 scrollView.contentOffset.y = 0
             }
             let height = -sender.translation(in: parentViewController?.view).y + startPositionY
-            update(height: height)
+            update(height: height, animated: false)
         case .cancelled, .ended, .failed:
             startPositionY = frame.height
             if sender.velocity(in: parentViewController?.view).y > 1000, isDismissAllowed {
@@ -279,15 +279,16 @@ public class BottomSheetView: UIView {
         }
     }
     
-    private func update(height: CGFloat) {
+    private func update(height: CGFloat, animated: Bool = true) {
         snp.updateConstraints { make in
             make.height.equalTo(height)
         }
         
-        UIView.animate(withDuration: 0.2) {
-            self.superview?.layoutIfNeeded()
+        if animated {
+            UIView.animate(withDuration: 0.2) {
+                self.superview?.layoutIfNeeded()
+            }
         }
-        
         delegate?.heightDidChange(to: height)
     }
 }
