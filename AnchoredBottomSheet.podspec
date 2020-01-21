@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AnchoredBottomSheet'
-  s.version          = '0.2.3'
+  s.version          = '0.2.4'
   s.summary          = 'iOS Maps like bottom sheet with configurable anchors and reusable pannable View'
 
   s.description      = <<-DESC
@@ -22,7 +22,7 @@ This small library tries to achieve this goals:
   s.author           = { 'havebeenfitz' => 'max.kraev@gmail.com' }
   s.source           = { :git => 'https://github.com/havebeenfitz/AnchoredBottomSheet.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'AnchoredBottomSheet/Classes/**/*'
   
