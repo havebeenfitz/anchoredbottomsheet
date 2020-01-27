@@ -17,6 +17,14 @@ public class BottomSheetViewController: UIViewController {
     public weak var delegate: BottomSheetViewControllerDelegate?
     public var bottomSheetView: BottomSheetView
     
+    // From
+    public var dismissOnAction: (() -> Void)?
+    
+    // To
+    public var viewDidAppear: (() -> Void)?
+    public var viewWillDisappear: (() -> Void)?
+    public var viewDidDisappear: (() -> Void)?
+    
     private var backgroundView = UIView()
     private var tapGesture = UITapGestureRecognizer()
     
@@ -26,6 +34,7 @@ public class BottomSheetViewController: UIViewController {
         modalPresentationStyle = .overCurrentContext
         modalTransitionStyle = .crossDissolve
         modalPresentationCapturesStatusBarAppearance = true
+        addDismissOnActionEvent()
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +49,12 @@ public class BottomSheetViewController: UIViewController {
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupSubviews()
+        viewDidAppear?()
+    }
+    
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewDidDisappear?()
     }
     
     // MARK:- Present
@@ -84,12 +99,19 @@ public class BottomSheetViewController: UIViewController {
         }
     }
     
+    private func addDismissOnActionEvent() {
+        dismissOnAction = { [weak self] in
+            self?.dismissRoutine()
+        }
+    }
+    
     fileprivate func dismissRoutine() {
+        viewWillDisappear?()
         bottomSheetView.snp.updateConstraints { make in
             make.height.equalTo(0)
         }
         
-        UIView.animate(withDuration: 0.1, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         }) { _ in
             self.dismiss(animated: false, completion: nil)
@@ -114,6 +136,13 @@ extension BottomSheetViewController: BottomSheetViewDelegate {
 
 extension BottomSheetViewController: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view?.isDescendant(of: bottomSheetView) ?? false {
+            return false
+        }
         return true
     }
 }

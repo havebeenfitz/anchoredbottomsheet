@@ -285,10 +285,11 @@ public class BottomSheetView: UIView {
         }
         
         if animated {
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseOut, animations: ({
                 self.superview?.layoutIfNeeded()
-            }
+            }))
         }
+
         delegate?.heightDidChange(to: height)
     }
 }
@@ -298,6 +299,15 @@ extension BottomSheetView: UIGestureRecognizerDelegate {
         guard let scrollView = contentView as? UIScrollView else {
             return false
         }
+
         return scrollView.contentOffset.y == 0 && panGesture.velocity(in: parentViewController?.view).y > 0
+    }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if (touch.view?.isDescendant(of: contentView) ?? false) && gestureRecognizer.isKind(of: UITapGestureRecognizer.self) {
+            return false
+        }
+        
+        return true
     }
 }
