@@ -1,1 +1,2 @@
 github "SnapKit/SnapKit" ~> 5.0.0
+github "havebeenfitz/AnchoredBottomSheet" "1.0.0"

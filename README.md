@@ -17,7 +17,7 @@ AnchoredBottomSheet is available through [CocoaPods](https://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AnchoredBottomSheet', '~> 1.0.0'
+pod 'AnchoredBottomSheet', '~> 1.1.1'
 ```
 
 
