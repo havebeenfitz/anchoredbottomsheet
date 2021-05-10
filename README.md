@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/cocoapods/l/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
 
-⚠️ Breaking changes in 1.0.0. `ButtonSheetViewConfiguration` now expect an icon resource or `nil` instead of just bool flag
+⚠️ Breaking changes in 1.0.0. `ButtonSheetViewConfiguration` now expects an icon resource or `nil` instead of just bool flag
 
 ⚠️ SnapKit is no longer a dependency since 1.2.0
 
