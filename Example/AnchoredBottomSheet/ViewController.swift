@@ -74,7 +74,7 @@ class ViewController: UIViewController {
                                                          defaultPosition: .middle(),
                                                          positions: [.middle(), .top()],
                                                          isPullIndicatorNeeded: true,
-                                                         isCloseButtonNeeded: false,
+                                                         closeButtonIcon: UIImage(named: "icon16Close"),
                                                          isDismissAllowed: true)
         let bottomSheetView = BottomSheetView(configuration: configuration)
         let bottomSheetViewController = BottomSheetViewController(bottomSheetView: bottomSheetView)
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
                                                          defaultPosition: .middle(),
                                                          positions: [.middle(), .top(), .bottom()],
                                                          isPullIndicatorNeeded: true,
-                                                         isCloseButtonNeeded: false,
+                                                         closeButtonIcon: UIImage(named: "icon16Close"),
                                                          isDismissAllowed: true)
         let bottomSheetView = BottomSheetView(configuration: configuration)
         let bottomSheetViewController = BottomSheetViewController(bottomSheetView: bottomSheetView)

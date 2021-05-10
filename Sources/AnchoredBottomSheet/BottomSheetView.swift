@@ -36,7 +36,7 @@ public class BottomSheetView: UIView {
     private let positions: [BottomSheetViewPosition]
     private let isSlidingToAppear: Bool
     private let isPullIndicatorNeeded: Bool
-    private let isCloseButtonNeeded: Bool
+    private let closeButtonIcon: UIImage?
     private let cornerRadius: CGFloat
     
     private lazy var startPositionY: CGFloat = frame.height
@@ -59,7 +59,7 @@ public class BottomSheetView: UIView {
         self.positions = configuration.positions
         self.isSlidingToAppear = configuration.isSlidingToAppear
         self.isPullIndicatorNeeded = configuration.isPullIndicatorNeeded
-        self.isCloseButtonNeeded = configuration.isCloseButtonNeeded
+        self.closeButtonIcon = configuration.closeButtonIcon
         self.isDismissAllowed = configuration.isDismissAllowed
         self.cornerRadius = configuration.cornerRadius
         super.init(frame: CGRect.zero)
@@ -141,9 +141,9 @@ public class BottomSheetView: UIView {
         }
         
        
-        if isCloseButtonNeeded {
+        if let closeButtonIcon = closeButtonIcon {
             closeButton = UIButton()
-            closeButton?.setImage(UIImage(named: "iconClose"), for: .normal)
+            closeButton?.setImage(closeButtonIcon, for: .normal)
             addSubview(closeButton ?? UIButton())
             closeButton?.snp.makeConstraints { make in
                 make.right.top.equalToSuperview().inset(16)

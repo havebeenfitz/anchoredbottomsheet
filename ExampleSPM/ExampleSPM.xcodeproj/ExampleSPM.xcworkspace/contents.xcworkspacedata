@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../AnchoredBottomSheet">
+      location = "group:../../Package.swift">
    </FileRef>
    <FileRef
       location = "container:">

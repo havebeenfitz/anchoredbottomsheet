@@ -9,22 +9,26 @@
 /* Begin PBXBuildFile section */
 		E48B30DA26490D5400F23269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B30D926490D5400F23269 /* AppDelegate.swift */; };
 		E48B30DC26490D5400F23269 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B30DB26490D5400F23269 /* SceneDelegate.swift */; };
-		E48B30DE26490D5400F23269 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B30DD26490D5400F23269 /* ViewController.swift */; };
 		E48B30E126490D5400F23269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48B30DF26490D5400F23269 /* Main.storyboard */; };
 		E48B30E326490D5500F23269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48B30E226490D5500F23269 /* Assets.xcassets */; };
 		E48B30E626490D5500F23269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48B30E426490D5500F23269 /* LaunchScreen.storyboard */; };
 		E48B30F0264918D100F23269 /* AnchoredBottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = E48B30EF264918D100F23269 /* AnchoredBottomSheet */; };
+		E48B30FE2649217400F23269 /* ExampleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B30FB2649217400F23269 /* ExampleTableViewDataSource.swift */; };
+		E48B30FF2649217400F23269 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B30FC2649217400F23269 /* ViewController.swift */; };
+		E48B31002649217400F23269 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B30FD2649217400F23269 /* SplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E48B30D626490D5400F23269 /* ExampleSPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleSPM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48B30D926490D5400F23269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E48B30DB26490D5400F23269 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E48B30DD26490D5400F23269 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E48B30E026490D5400F23269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E48B30E226490D5500F23269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E48B30E526490D5500F23269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E48B30E726490D5500F23269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E48B30FB2649217400F23269 /* ExampleTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDataSource.swift; sourceTree = "<group>"; };
+		E48B30FC2649217400F23269 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E48B30FD2649217400F23269 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,11 @@
 		E48B30D826490D5400F23269 /* ExampleSPM */ = {
 			isa = PBXGroup;
 			children = (
+				E48B30FB2649217400F23269 /* ExampleTableViewDataSource.swift */,
+				E48B30FD2649217400F23269 /* SplitViewController.swift */,
+				E48B30FC2649217400F23269 /* ViewController.swift */,
 				E48B30D926490D5400F23269 /* AppDelegate.swift */,
 				E48B30DB26490D5400F23269 /* SceneDelegate.swift */,
-				E48B30DD26490D5400F23269 /* ViewController.swift */,
 				E48B30DF26490D5400F23269 /* Main.storyboard */,
 				E48B30E226490D5500F23269 /* Assets.xcassets */,
 				E48B30E426490D5500F23269 /* LaunchScreen.storyboard */,
@@ -145,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E48B30DE26490D5400F23269 /* ViewController.swift in Sources */,
+				E48B31002649217400F23269 /* SplitViewController.swift in Sources */,
+				E48B30FE2649217400F23269 /* ExampleTableViewDataSource.swift in Sources */,
 				E48B30DA26490D5400F23269 /* AppDelegate.swift in Sources */,
+				E48B30FF2649217400F23269 /* ViewController.swift in Sources */,
 				E48B30DC26490D5400F23269 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +304,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ExampleSPM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ExampleSPM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

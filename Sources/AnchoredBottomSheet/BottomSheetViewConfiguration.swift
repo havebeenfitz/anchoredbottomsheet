@@ -22,7 +22,7 @@ public class BottomSheetViewConfiguration {
     /// Gray line to grab to
     let isPullIndicatorNeeded: Bool
     /// Appears on the top right corner, notifies the delegate
-    let isCloseButtonNeeded: Bool
+    let closeButtonIcon: UIImage?
     /// Can dismiss or not. Not to use with close button
     let isDismissAllowed: Bool
     /// Corner radius of the bottom sheet. Default to 16
@@ -34,7 +34,7 @@ public class BottomSheetViewConfiguration {
                 positions: [BottomSheetViewPosition],
                 isSlidingToAppear: Bool = true,
                 isPullIndicatorNeeded: Bool,
-                isCloseButtonNeeded: Bool,
+                closeButtonIcon: UIImage? = nil,
                 isDismissAllowed: Bool,
                 cornerRadius: CGFloat = 16) {
         self.contentView = contentView
@@ -45,7 +45,7 @@ public class BottomSheetViewConfiguration {
         self.isSlidingToAppear = isSlidingToAppear
         
         self.isPullIndicatorNeeded = isPullIndicatorNeeded
-        self.isCloseButtonNeeded = isCloseButtonNeeded
+        self.closeButtonIcon = closeButtonIcon
         self.isDismissAllowed = isDismissAllowed
         
         self.cornerRadius = cornerRadius

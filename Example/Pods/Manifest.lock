@@ -1,5 +1,5 @@
 PODS:
-  - AnchoredBottomSheet (0.7.0):
+  - AnchoredBottomSheet (0.8.0):
     - SnapKit (~> 5.0)
   - SnapKit (5.0.1)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AnchoredBottomSheet: a3f77db871941dccee3676818744d8d79631b272
+  AnchoredBottomSheet: dc8cd6bb5bde789564293922abb8cbf943db66e3
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
 PODFILE CHECKSUM: c86fdd48ec5af0de2a695e036f29288da5648e31
