@@ -112,7 +112,7 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Requirements
 
-Xcode 11+, iOS deployment target ≥ 10
+Xcode 12+, iOS deployment target ≥ 10
 
 ## Author
 
