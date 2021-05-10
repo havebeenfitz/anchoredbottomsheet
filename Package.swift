@@ -16,7 +16,10 @@ let package = Package(
     targets: [
         .target(
             name: "AnchoredBottomSheet",
-            dependencies: ["SnapKit"])
+            dependencies: ["SnapKit"],
+            path: "AnchoredBottomSheet",
+            exclude: ["Example/", "ExampleSPM/", "AnchoredBottomSheet.podspec"]
+        )
     ],
     swiftLanguageVersions: [.v5]
 )
