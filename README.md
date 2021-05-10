@@ -10,10 +10,11 @@
 
 ⚠️ SnapKit is no longer a dependency since 1.2.0
 
+🎉 ByContent anchor mode is available since 1.3.0. BottomSheetView resizes itself to match the subviews content height as long as it's smaller than screen height
+
 ## About
 
-<img height="500" src="https://user-images.githubusercontent.com/31866271/117650439-5dfe6d80-b199-11eb-89d5-e8df63268827.gif"><img height="500" src="https://user-images.githubusercontent.com/31866271/117653913-b20b5100-b19d-11eb-9ff7-613d11c3caa2.gif">
-
+![Demo](https://user-images.githubusercontent.com/31866271/117659897-2ac1db80-b1a5-11eb-903e-bdd562fd8c38.gif)
 
 This is iOS Maps like anchored bottom sheet with configurable anchors and reusable `BottomSheetView`, that can be used inside provided modal controller or without it.
 
@@ -40,6 +41,7 @@ Supported anchors:
 2. Middle
 3. Bottom
 4. Fixed
+5. By content
 
 Each anchor has associated value, which will override default height for this anchor.
 By content mode is not yet implemented, feel free to open a pull request.

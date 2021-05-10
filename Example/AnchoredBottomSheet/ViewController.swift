@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     fileprivate func presentModal(at index: Int) {
         switch index {
         case 0:
-            presentModalWithStackView()
+            presentWithContentHeight()
         case 1:
             presentModalWithTableView()
         case 2:
@@ -54,29 +54,11 @@ class ViewController: UIViewController {
         }
     }
     
-    private func presentModalWithStackView() {
-        let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
-        button1.backgroundColor = .green
-        
-        let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
-        button2.backgroundColor = .red
-        
-        let button3 = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
-        button3.backgroundColor = .yellow
-        
-        
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        stackView.distribution = .fillEqually
-        stackView.addArrangedSubview(button1)
-        stackView.addArrangedSubview(button2)
-        stackView.addArrangedSubview(button3)
-        
-        let configuration = BottomSheetViewConfiguration(contentView: stackView,
+    private func presentWithContentHeight() {
+        let configuration = BottomSheetViewConfiguration(contentView: data.tableView,
                                                          parentViewController: self,
-                                                         defaultPosition: .middle(),
-                                                         positions: [.middle(), .top()],
+                                                         defaultPosition: .byContent,
+                                                         positions: [.byContent],
                                                          isPullIndicatorNeeded: true,
                                                          closeButtonIcon: UIImage(named: "icon16Close"),
                                                          isDismissAllowed: true)
@@ -112,26 +94,32 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         presentModal(at: indexPath.row)
     }
 }
 
 extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)
+        cell.textLabel?.numberOfLines = 0
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Present with stackView"
+            cell.textLabel?.text = "Present tableView with it's content height"
             return cell
         case 1:
-            cell.textLabel?.text = "Present with tableView"
+            cell.textLabel?.text = "Present tableView with middle,\ntop and bottom anchors"
             return cell
         case 2:
-            cell.textLabel?.text = "Push \"split screen\""
+            cell.textLabel?.text = "Push \"split screen\" with\naccessible background"
             return cell
         default:
             return UITableViewCell()

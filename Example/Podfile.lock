@@ -1,5 +1,5 @@
 PODS:
-  - AnchoredBottomSheet (1.2.0)
+  - AnchoredBottomSheet (1.3.0)
 
 DEPENDENCIES:
   - AnchoredBottomSheet (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AnchoredBottomSheet: 67b3c0f44ed4e508c0bf66308c2c48f3c13973df
+  AnchoredBottomSheet: 61c3b5e7b7b448f24899ba2e1fcba6762cbc0b94
 
 PODFILE CHECKSUM: 9d2fa57cad45113c77064b354f9582a45331dfbf
 

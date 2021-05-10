@@ -53,6 +53,10 @@ public class BottomSheetView: UIView {
     
     private var closeButton: UIButton?
     
+    private var maxSheetHeight: CGFloat {
+        UIScreen.main.bounds.height - UIApplication.shared.statusBarFrame.height
+    }
+    
     public init(configuration: BottomSheetViewConfiguration) {
         self.contentView = configuration.contentView
         self.parentViewController = configuration.parentViewController
@@ -98,12 +102,17 @@ public class BottomSheetView: UIView {
             case .byContent:
                 if let scrollView = contentView as? UIScrollView {
                     let finalRect = scrollView.contentSize
-                    byContentPositionHeight = finalRect.height + 70
+                    byContentPositionHeight = min(finalRect.height + 70, maxSheetHeight)
                 } else {
-                    let finalRect: CGRect = contentView.subviews.reduce(into: .zero) { rect, subview in
-                        rect = rect.union(subview.frame)
+                    if let scrollView = contentView as? UIScrollView {
+                        let finalRect = scrollView.contentSize
+                        byContentPositionHeight = min(finalRect.height + 70, maxSheetHeight)
+                    } else {
+                        let finalRect: CGRect = contentView.subviews.reduce(into: .zero) { rect, subview in
+                            rect = rect.union(subview.frame)
+                        }
+                        byContentPositionHeight = finalRect.height
                     }
-                    byContentPositionHeight = finalRect.height
                 }
             }
         }
