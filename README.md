@@ -7,6 +7,8 @@
 ![SPM](https://img.shields.io/badge/spm-compatible-success)
 ![Carthage](https://img.shields.io/badge/carthage-compatible-success)
 
+⚠️ Breaking changes in 1.0.0. `ButtonSheetViewConfiguration` now expect an icon resource or `nil` instead of just bool flag
+
 ## Installation
 
 ### Cocoapods
