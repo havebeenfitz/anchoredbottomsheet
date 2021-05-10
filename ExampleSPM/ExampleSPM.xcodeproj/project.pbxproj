@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		E48B30E126490D5400F23269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48B30DF26490D5400F23269 /* Main.storyboard */; };
 		E48B30E326490D5500F23269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48B30E226490D5500F23269 /* Assets.xcassets */; };
 		E48B30E626490D5500F23269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48B30E426490D5500F23269 /* LaunchScreen.storyboard */; };
+		E48B30F0264918D100F23269 /* AnchoredBottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = E48B30EF264918D100F23269 /* AnchoredBottomSheet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48B30F0264918D100F23269 /* AnchoredBottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = ExampleSPM;
+			packageProductDependencies = (
+				E48B30EF264918D100F23269 /* AnchoredBottomSheet */,
+			);
 			productName = ExampleSPM;
 			productReference = E48B30D626490D5400F23269 /* ExampleSPM.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +115,9 @@
 				Base,
 			);
 			mainGroup = E48B30CD26490D5400F23269;
+			packageReferences = (
+				E48B30EE264918D100F23269 /* XCRemoteSwiftPackageReference "AnchoredBottomSheet" */,
+			);
 			productRefGroup = E48B30D726490D5400F23269 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E48B30EE264918D100F23269 /* XCRemoteSwiftPackageReference "AnchoredBottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:havebeenfitz/AnchoredBottomSheet.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E48B30EF264918D100F23269 /* AnchoredBottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E48B30EE264918D100F23269 /* XCRemoteSwiftPackageReference "AnchoredBottomSheet" */;
+			productName = AnchoredBottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E48B30CE26490D5400F23269 /* Project object */;
 }

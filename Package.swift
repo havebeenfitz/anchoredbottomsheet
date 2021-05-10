@@ -8,17 +8,22 @@ let package = Package(
     products: [
         .library(
             name: "AnchoredBottomSheet",
-            targets: ["AnchoredBottomSheet"])
+            targets: ["AnchoredBottomSheet"]
+        )
     ],
     dependencies: [
-        .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.1"))
+        .package(
+            url: "https://github.com/SnapKit/SnapKit.git",
+            .upToNextMajor(from: "5.0.1")
+        )
     ],
     targets: [
         .target(
             name: "AnchoredBottomSheet",
             dependencies: ["SnapKit"],
-            path: "AnchoredBottomSheet",
-            exclude: ["Example/", "ExampleSPM/", "AnchoredBottomSheet.podspec"]
+            resources: [
+                .copy("Assets")
+            ]
         )
     ],
     swiftLanguageVersions: [.v5]

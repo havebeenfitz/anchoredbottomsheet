@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AnchoredBottomSheet'
-  s.version          = '0.4.0'
+  s.version          = '0.7.0'
   s.summary          = 'iOS Maps like bottom sheet with configurable anchors and reusable pannable View'
 
   s.description      = <<-DESC
@@ -24,7 +24,7 @@ This small library tries to achieve this goals:
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'AnchoredBottomSheet/Classes/**/*'
+  s.source_files = 'Sources/AnchoredBottomSheet/Classes/**/*'
   
   s.resource_bundles = {
     'AnchoredBottomSheet' => ['AnchoredBottomSheet/Assets/*']
