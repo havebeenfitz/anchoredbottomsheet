@@ -82,7 +82,7 @@ let config = BottomSheetViewConfiguration(contentView: UIView(),
                                           defaultPosition: .middle(),
                                           positions: [.top(), .middle(), .bottom()],
                                           isSlidingToAppear: false,
-                                          isPullIndicatorNeeded: true
+                                          isPullIndicatorNeeded: true,
                                           closeButtonIcon: UIImage(named: "closeIcn)",
                                           isDismissAllowed: false,
                                           cornerRadius: 16)
