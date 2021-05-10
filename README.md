@@ -10,6 +10,57 @@
 
 ⚠️ Breaking changes in 1.0.0. `ButtonSheetViewConfiguration` now expect an icon resource or `nil` instead of just bool flag
 
+⚠️ SnapKit is no longer a dependency since 1.2.0
+
+## About
+
+<img height="600" src="https://user-images.githubusercontent.com/31866271/117650439-5dfe6d80-b199-11eb-89d5-e8df63268827.gif"><img height="600" alt="TableView1" src="https://user-images.githubusercontent.com/31866271/117646400-60aa9400-b194-11eb-8ba5-2862c2d9a9a7.png"><img height="600" alt="TableView2" src="https://user-images.githubusercontent.com/31866271/117646396-6011fd80-b194-11eb-9320-abeee9ed3b40.png">
+
+This is iOS Maps like anchored bottom sheet with configurable anchors and reusable `BottomSheetView`, that can be used inside provided modal controller or without it.
+
+`BottomSheetView` supports all kinds of `UIView's` including `UIScrollView` and it's ancestors as a container view.
+
+`BottomSheetViewController` is intended to be used as a modal presented controller.
+
+To configure `BottomSheetView` you should use `BottomSheetViewConfiguration` struct like this:
+
+```swift
+let config = BottomSheetViewConfiguration(contentView: UIView(),
+                                          parentViewController: self,
+                                          defaultPosition: .middle(),
+                                          positions: [.top(), .middle(), .bottom()],
+                                          isSlidingToAppear: false,
+                                          isPullIndicatorNeeded: true,
+                                          closeButtonIcon: UIImage(named: "closeIcn)",
+                                          isDismissAllowed: false,
+                                          cornerRadius: 16)
+```
+
+Supported anchors: 
+1. Top
+2. Middle
+3. Bottom
+4. Fixed
+
+Each anchor has associated value, which will override default height for this anchor.
+By content mode is not yet implemented, feel free to open a pull request.
+
+Once configuration is done, you should create `BottomSheetView` like this:
+```swift
+let bottomSheetView = BottomSheetView(configuration: configuration)
+```
+
+If you want to use this view for some complex UI cases, `BottomSheetView` will handle the pan gesture and will notify `BottomSheetViewDelegate` in `heightDidChange(to height: CGFloat)` method
+
+If you want to implement general pop-up behaviour, you should use `BottomSheetViewController`. Create and present it like so:
+```swift
+let bottomSheetViewController = BottomSheetViewController(bottomSheetView: bottomSheetView)
+        
+bottomSheetViewController.delegate = self
+bottomSheetViewController.present(from: self)
+```
+
+
 ## Installation
 
 ### Cocoapods
@@ -64,57 +115,6 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 ## Requirements
 
 Xcode 11+, iOS deployment target ≥ 10
-
-## About
-
-<img width="250" alt="Screenshot 2021-05-10 at 13 18 11" src="https://user-images.githubusercontent.com/31866271/117646101-0f9aa000-b194-11eb-8245-c48ad236c14e.png"><img width="250" alt="Screenshot 2021-05-10 at 13 32 55" src="https://user-images.githubusercontent.com/31866271/117646400-60aa9400-b194-11eb-8ba5-2862c2d9a9a7.png"><img width="250" alt="Screenshot 2021-05-10 at 13 33 01" src="https://user-images.githubusercontent.com/31866271/117646396-6011fd80-b194-11eb-9320-abeee9ed3b40.png">
-
-
-
-
-This is iOS Maps like anchored bottom sheet with configurable anchors and reusable `BottomSheetView`, that can be used inside provided modal controller or without it.
-
-`BottomSheetView` supports all kinds of `UIView's` including `UIScrollView` and it's ancestors as a container view.
-
-`BottomSheetViewController` is intended to be used as a modal presented controller.
-
-To configure `BottomSheetView` you should use `BottomSheetViewConfiguration` struct like this:
-
-```swift
-let config = BottomSheetViewConfiguration(contentView: UIView(),
-                                          parentViewController: self,
-                                          defaultPosition: .middle(),
-                                          positions: [.top(), .middle(), .bottom()],
-                                          isSlidingToAppear: false,
-                                          isPullIndicatorNeeded: true,
-                                          closeButtonIcon: UIImage(named: "closeIcn)",
-                                          isDismissAllowed: false,
-                                          cornerRadius: 16)
-```
-
-Supported anchors: 
-1. Top
-2. Middle
-3. Bottom
-4. Fixed
-
-Each anchor has associated value, which will override default height for this anchor.
-By content mode is not yet implemented, feel free to open a pull request.
-
-Once configuration is done, you should create `BottomSheetView` like this:
-```swift
-let bottomSheetView = BottomSheetView(configuration: configuration)
-```
-
-If you want to use this view for some complex UI cases, `BottomSheetView` will handle the pan gesture and will notify `BottomSheetViewDelegate` in `heightDidChange(to height: CGFloat)` method
-
-If you want to implement general pop-up behaviour, you should use `BottomSheetViewController`. Create and present it like so:
-```swift
-let bottomSheetViewController = BottomSheetViewController(bottomSheetView: bottomSheetView)
-        
-bottomSheetViewController.delegate = self
-bottomSheetViewController.present(from: self)
-```
 
 ## Author
 
