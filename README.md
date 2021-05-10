@@ -25,15 +25,17 @@ This is iOS Maps like anchored bottom sheet with configurable anchors and reusab
 To configure `BottomSheetView` you should use `BottomSheetViewConfiguration` struct like this:
 
 ```swift
-let config = BottomSheetViewConfiguration(contentView: UIView(),
-                                          parentViewController: self,
-                                          defaultPosition: .middle(),
-                                          positions: [.top(), .middle(), .bottom()],
-                                          isSlidingToAppear: false,
-                                          isPullIndicatorNeeded: true,
-                                          closeButtonIcon: UIImage(named: "closeIcn)",
-                                          isDismissAllowed: false,
-                                          cornerRadius: 16)
+let config = BottomSheetViewConfiguration(
+    contentView: UIView(),
+    parentViewController: self,
+    defaultPosition: .middle(),
+    positions: [.top(), .middle(), .bottom()],
+    isSlidingToAppear: false,
+    isPullIndicatorNeeded: true,
+    closeButtonIcon: UIImage(named: "closeIcon)",
+    isDismissAllowed: false,
+    cornerRadius: 16
+)
 ```
 
 Supported anchors: 
@@ -70,7 +72,7 @@ AnchoredBottomSheet is available through [CocoaPods](https://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AnchoredBottomSheet', '~> 1.2.0'
+pod 'AnchoredBottomSheet', '~> 1.3.1'
 ```
 
 
@@ -88,7 +90,7 @@ $ brew install carthage
 To integrate AnchoredBottomSheet into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "havebeenfitz/AnchoredBottomSheet" "1.2.4"
+github "havebeenfitz/AnchoredBottomSheet" "1.3.1"
 ```
 
 Run `carthage update` to build the framework and drag the built `SnapKit.framework` into your Xcode project.
@@ -105,7 +107,7 @@ To integrate AnchoredBottomSheet into your Xcode project using Swift Package Man
 dependencies: [
     .package(
         url: "https://github.com/havebeenfitz/AnchoredBottomSheet.git",
-        .upToNextMajor(from: "1.2.4")
+        .upToNextMajor(from: "1.3.1")
     )
 ]
 ```
