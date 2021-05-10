@@ -28,6 +28,8 @@ public class BottomSheetViewController: UIViewController {
     private var backgroundView = UIView()
     private var tapGesture = UITapGestureRecognizer()
     
+    private var heightConstraint: NSLayoutConstraint?
+    
     public init(bottomSheetView: BottomSheetView) {
         self.bottomSheetView = bottomSheetView
         super.init(nibName: nil, bundle: nil)
@@ -72,16 +74,28 @@ public class BottomSheetViewController: UIViewController {
         bottomSheetView.delegate = self
         
         view.addSubview(backgroundView)
-        backgroundView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        [
+            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ]
+        .forEach { $0.isActive = true }
+        
         
         view.addSubview(bottomSheetView)
-        self.bottomSheetView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(0)
-        }
+        bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
+        [
+            bottomSheetView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomSheetView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomSheetView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ]
+        .forEach { $0.isActive = true }
         
+        heightConstraint = bottomSheetView.heightAnchor.constraint(equalToConstant: 0)
+        
+        view.setNeedsLayout()
         view.layoutIfNeeded()
         
         bottomSheetView.didSetupConstraints = true
@@ -107,9 +121,9 @@ public class BottomSheetViewController: UIViewController {
     
     fileprivate func dismissRoutine() {
         viewWillDisappear?()
-        bottomSheetView.snp.updateConstraints { make in
-            make.height.equalTo(0)
-        }
+        heightConstraint?.isActive = false
+        heightConstraint = bottomSheetView.heightAnchor.constraint(equalToConstant: 0)
+        heightConstraint?.isActive = true
         
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()

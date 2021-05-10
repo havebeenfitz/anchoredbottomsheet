@@ -16,8 +16,18 @@ class SplitViewController: UIViewController {
         return view
     }()
     
+    private let accessibleButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Push me, I'm accessible", for: .normal)
+        button.backgroundColor = .blue
+        button.setTitleColor(.darkGray, for: .highlighted)
+        return button
+    }()
+    
     private lazy var bottomSheetView: BottomSheetView = {
-        let config = BottomSheetViewConfiguration(contentView: UIView(),
+        let label = UILabel()
+        label.text = "   Some content here"
+        let config = BottomSheetViewConfiguration(contentView: label,
                                                   parentViewController: self,
                                                   defaultPosition: .middle(),
                                                   positions: [.top(), .middle(), .bottom()],
@@ -49,15 +59,31 @@ class SplitViewController: UIViewController {
         view.addSubview(yellowView)
         view.addSubview(bottomSheetView)
         
-        bottomSheetView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(0)
-        }
+        yellowView.addSubview(accessibleButton)
+        accessibleButton.translatesAutoresizingMaskIntoConstraints = false
+        [
+            accessibleButton.centerXAnchor.constraint(equalTo: yellowView.centerXAnchor),
+            accessibleButton.centerYAnchor.constraint(equalTo: yellowView.centerYAnchor),
+            accessibleButton.heightAnchor.constraint(equalToConstant: 50)
+        ]
+        .forEach { $0.isActive = true }
         
-        yellowView.snp.makeConstraints { make in
-            make.left.top.right.equalToSuperview()
-            make.bottom.equalTo(bottomSheetView.snp.top).inset(20)
-        }
+        bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
+        [
+            bottomSheetView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomSheetView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomSheetView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ]
+        .forEach { $0.isActive = true }
+        
+        yellowView.translatesAutoresizingMaskIntoConstraints = false
+        [
+            yellowView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            yellowView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            yellowView.topAnchor.constraint(equalTo: view.topAnchor),
+            yellowView.bottomAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 20)
+        ]
+        .forEach { $0.isActive = true}
     }
 }
 

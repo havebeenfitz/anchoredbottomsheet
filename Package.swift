@@ -11,16 +11,9 @@ let package = Package(
             targets: ["AnchoredBottomSheet"]
         )
     ],
-    dependencies: [
-        .package(
-            url: "https://github.com/SnapKit/SnapKit.git",
-            .upToNextMajor(from: "5.0.1")
-        )
-    ],
     targets: [
         .target(
-            name: "AnchoredBottomSheet",
-            dependencies: ["SnapKit"]
+            name: "AnchoredBottomSheet"
         )
     ],
     swiftLanguageVersions: [.v5]

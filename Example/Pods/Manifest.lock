@@ -1,23 +1,16 @@
 PODS:
-  - AnchoredBottomSheet (1.1.1):
-    - SnapKit (~> 5.0)
-  - SnapKit (5.0.1)
+  - AnchoredBottomSheet (1.2.0)
 
 DEPENDENCIES:
   - AnchoredBottomSheet (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - SnapKit
 
 EXTERNAL SOURCES:
   AnchoredBottomSheet:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AnchoredBottomSheet: 963a14fd1248b6f866a3c035e8a100612ab5781d
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  AnchoredBottomSheet: 67b3c0f44ed4e508c0bf66308c2c48f3c13973df
 
-PODFILE CHECKSUM: c86fdd48ec5af0de2a695e036f29288da5648e31
+PODFILE CHECKSUM: 9d2fa57cad45113c77064b354f9582a45331dfbf
 
 COCOAPODS: 1.10.1

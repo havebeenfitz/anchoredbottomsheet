@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 public class BottomSheetView: UIView {
     
@@ -23,6 +22,8 @@ public class BottomSheetView: UIView {
     public weak var delegate: BottomSheetViewDelegate?
     
     // MARK:- Private
+    
+    private var heightConstraint: NSLayoutConstraint?
     
     private lazy var currentPosition: BottomSheetViewPosition = defaultPosition
     private var fixedPositionHeight: CGFloat = 0
@@ -109,45 +110,54 @@ public class BottomSheetView: UIView {
     }
     
     private func setup() {
-        
         backgroundColor = .white
+        
+        addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         
         if isPullIndicatorNeeded {
             addSubview(pullIndicatorView)
-            pullIndicatorView.snp.makeConstraints { make in
-                make.top.equalToSuperview().inset(10)
-                make.centerX.equalToSuperview()
-                make.height.equalTo(3).priority(.init(999))
-                make.width.equalTo(104)
-           }
-           
-            addSubview(contentView)
-            contentView.snp.makeConstraints { make in
-                make.left.right.equalToSuperview().priority(.init(999))
-                make.top.equalTo(pullIndicatorView.snp.bottom).offset(16).priority(.init(999))
-                if contentView.isKind(of: UIScrollView.self) {
-                    make.bottom.equalToSuperview().priority(.init(999))
-                }
-           }
+            pullIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+            [
+                pullIndicatorView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+                pullIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
+                pullIndicatorView.heightAnchor.constraint(equalToConstant: 3),
+                pullIndicatorView.widthAnchor.constraint(equalToConstant: 104)
+            ]
+            .forEach { $0.isActive = true }
+
+            [
+                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: pullIndicatorView.bottomAnchor, constant: 16)
+            ]
+            .forEach { $0.isActive = true }
         } else {
-            addSubview(contentView)
-            contentView.snp.makeConstraints { make in
-                make.left.right.equalToSuperview().priority(.init(999))
-                make.top.equalToSuperview().offset(16).priority(.init(999))
-                if contentView.isKind(of: UIScrollView.self) {
-                    make.bottom.equalToSuperview().priority(.init(999))
-                }
-            }
+            [
+                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: topAnchor, constant: 16)
+            ]
+            .forEach { $0.isActive = true }
         }
         
-       
+        if contentView.isKind(of: UIScrollView.self) {
+            let constraint = contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            constraint.priority = .init(999)
+            constraint.isActive = true
+        }
+        
+        
         if let closeButtonIcon = closeButtonIcon {
             closeButton = UIButton()
             closeButton?.setImage(closeButtonIcon, for: .normal)
             addSubview(closeButton ?? UIButton())
-            closeButton?.snp.makeConstraints { make in
-                make.right.top.equalToSuperview().inset(16)
-            }
+            closeButton?.translatesAutoresizingMaskIntoConstraints = false
+            [
+                closeButton?.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+                closeButton?.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            ]
+            .forEach { $0?.isActive = true }
             
             closeButton?.addTarget(self, action: #selector(onClose(sender:)), for: .touchUpInside)
         }
@@ -179,9 +189,12 @@ public class BottomSheetView: UIView {
     }
     
     private func setInitialHeight(_ height: CGFloat) {
-        snp.updateConstraints { make in
-            make.height.equalTo(height)
-        }
+        heightConstraint?.isActive = false
+        heightConstraint = heightAnchor.constraint(equalToConstant: height)
+        heightConstraint?.priority = .init(999)
+        heightConstraint?.isActive = true
+        
+        setNeedsLayout()
         
         if isSlidingToAppear {
             UIView.animate(withDuration: 0.2, delay: 0, options: .allowAnimatedContent, animations: {
@@ -280,16 +293,19 @@ public class BottomSheetView: UIView {
     }
     
     private func update(height: CGFloat, animated: Bool = true) {
-        snp.updateConstraints { make in
-            make.height.equalTo(height)
-        }
+        heightConstraint?.isActive = false
+        heightConstraint = heightAnchor.constraint(equalToConstant: height)
+        heightConstraint?.priority = .init(999)
+        heightConstraint?.isActive = true
+        
+        setNeedsLayout()
         
         if animated {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseOut, animations: ({
                 self.superview?.layoutIfNeeded()
             }))
         }
-
+        
         delegate?.heightDidChange(to: height)
     }
 }
@@ -299,7 +315,7 @@ extension BottomSheetView: UIGestureRecognizerDelegate {
         guard let scrollView = contentView as? UIScrollView else {
             return false
         }
-
+        
         return scrollView.contentOffset.y == 0 && panGesture.velocity(in: parentViewController?.view).y > 0
     }
     

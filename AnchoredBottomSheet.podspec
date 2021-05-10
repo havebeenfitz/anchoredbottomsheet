@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AnchoredBottomSheet'
-  s.version          = '1.1.1'
+  s.version          = '1.2.0'
   s.summary          = 'iOS Maps like bottom sheet with configurable anchors and reusable pannable View'
 
   s.description      = <<-DESC
@@ -25,6 +25,4 @@ This small library tries to achieve this goals:
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'Sources/AnchoredBottomSheet/**/*'
-
-  s.dependency 'SnapKit', '~> 5.0'
 end

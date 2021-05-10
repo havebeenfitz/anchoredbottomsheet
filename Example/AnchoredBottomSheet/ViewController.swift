@@ -8,7 +8,6 @@
 
 import UIKit
 import AnchoredBottomSheet
-import SnapKit
 
 class ViewController: UIViewController {
     
@@ -32,9 +31,14 @@ class ViewController: UIViewController {
     
     private func setup() {
         view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        [
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ]
+        .forEach { $0.isActive = true }
     }
     
     fileprivate func presentModal(at index: Int) {
