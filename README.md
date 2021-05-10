@@ -1,4 +1,5 @@
-# AnchoredBottomSheet
+![Untitled_Artwork 4](https://user-images.githubusercontent.com/31866271/117677140-dc1d3d00-b1b6-11eb-9b55-aade5409b006.png)
+
 [![Platform](https://img.shields.io/cocoapods/p/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
 [![CI Status](https://img.shields.io/travis/havebeenfitz/AnchoredBottomSheet.svg?style=flat)](https://travis-ci.org/havebeenfitz/AnchoredBottomSheet)
 [![Version](https://img.shields.io/cocoapods/v/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
