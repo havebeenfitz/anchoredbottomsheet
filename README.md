@@ -9,16 +9,58 @@
 
 ## Installation
 
+### Cocoapods
+
 AnchoredBottomSheet is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AnchoredBottomSheet'
+pod 'AnchoredBottomSheet', '1.0.0'
 ```
+
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate AnchoredBottomSheet into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "havebeenfitz/AnchoredBottomSheet" "1.0.0"
+```
+
+Run `carthage update` to build the framework and drag the built `SnapKit.framework` into your Xcode project.
+
+### Swift Package Manager
+
+[Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+
+> Xcode 11+ is required to build AnchoredBottomSheet using Swift Package Manager.
+
+To integrate AnchoredBottomSheet into your Xcode project using Swift Package Manager, add it to the dependencies value of your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/havebeenfitz/AnchoredBottomSheet.git", .upToNextMajor(from: "1.0.0"))
+]
+```
+
+### Manually
+
+If you prefer not to use either of the aforementioned dependency managers, you can integrate AnchoredBottomSheet into your project manually.
+
+---
 
 ## Requirements
 
-Xcode 11, iOS deployment target ≥ 10
+Xcode 11+, iOS deployment target ≥ 10
 
 ## About
 
@@ -41,7 +83,7 @@ let config = BottomSheetViewConfiguration(contentView: UIView(),
                                           positions: [.top(), .middle(), .bottom()],
                                           isSlidingToAppear: false,
                                           isPullIndicatorNeeded: true
-                                          isCloseButtonNeeded: false,
+                                          closeButtonIcon: UIImage(named: "closeIcn)",
                                           isDismissAllowed: false,
                                           cornerRadius: 16)
 ```
