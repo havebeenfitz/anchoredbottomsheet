@@ -12,7 +12,8 @@
 
 ## About
 
-<img height="500" src="https://user-images.githubusercontent.com/31866271/117650439-5dfe6d80-b199-11eb-89d5-e8df63268827.gif"><img height="500" alt="TableView1" src="https://user-images.githubusercontent.com/31866271/117646400-60aa9400-b194-11eb-8ba5-2862c2d9a9a7.png"><img height="500" alt="TableView2" src="https://user-images.githubusercontent.com/31866271/117646396-6011fd80-b194-11eb-9320-abeee9ed3b40.png">
+<img height="500" src="https://user-images.githubusercontent.com/31866271/117650439-5dfe6d80-b199-11eb-89d5-e8df63268827.gif"><img height="500" src="https://user-images.githubusercontent.com/31866271/117653913-b20b5100-b19d-11eb-9ff7-613d11c3caa2.gif">
+
 
 This is iOS Maps like anchored bottom sheet with configurable anchors and reusable `BottomSheetView`, that can be used inside provided modal controller or without it.
 
