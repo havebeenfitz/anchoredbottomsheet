@@ -101,7 +101,10 @@ To integrate AnchoredBottomSheet into your Xcode project using Swift Package Man
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/havebeenfitz/AnchoredBottomSheet.git", .upToNextMajor(from: "1.0.0"))
+    .package(
+        url: "https://github.com/havebeenfitz/AnchoredBottomSheet.git",
+        .upToNextMajor(from: "1.0.0")
+    )
 ]
 ```
 
