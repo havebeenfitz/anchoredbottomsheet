@@ -20,10 +20,7 @@ let package = Package(
     targets: [
         .target(
             name: "AnchoredBottomSheet",
-            dependencies: ["SnapKit"],
-            resources: [
-                .copy("Assets")
-            ]
+            dependencies: ["SnapKit"]
         )
     ],
     swiftLanguageVersions: [.v5]
