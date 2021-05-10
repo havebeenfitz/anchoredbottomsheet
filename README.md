@@ -4,6 +4,8 @@
 [![Version](https://img.shields.io/cocoapods/v/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
 [![License](https://img.shields.io/cocoapods/l/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
 [![Platform](https://img.shields.io/cocoapods/p/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
+![SPM](https://img.shields.io/badge/spm-compatible-success)
+![Carthage](https://img.shields.io/badge/carthage-compatible-success)
 
 ## Installation
 
@@ -38,7 +40,7 @@ let config = BottomSheetViewConfiguration(contentView: UIView(),
                                           defaultPosition: .middle(),
                                           positions: [.top(), .middle(), .bottom()],
                                           isSlidingToAppear: false,
-                                          isPullIndicatorNeeded: true,
+                                          isPullIndicatorNeeded: true
                                           isCloseButtonNeeded: false,
                                           isDismissAllowed: false,
                                           cornerRadius: 16)
