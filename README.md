@@ -67,7 +67,8 @@ Xcode 11+, iOS deployment target ≥ 10
 
 ## About
 
-<img width="250" alt="top" src="https://user-images.githubusercontent.com/31866271/72686183-ef5c5300-3b02-11ea-8ba2-a393273eb76d.png"><img width="250" alt="middle" src="https://user-images.githubusercontent.com/31866271/72686162-b6bc7980-3b02-11ea-9b79-7ba7d524695a.png"><img width="250" alt="bottom" src="https://user-images.githubusercontent.com/31866271/72686163-b6bc7980-3b02-11ea-9227-b5954d655104.png">
+<img width="250" alt="Screenshot 2021-05-10 at 13 18 11" src="https://user-images.githubusercontent.com/31866271/117646101-0f9aa000-b194-11eb-8245-c48ad236c14e.png"><img width="250" alt="Screenshot 2021-05-10 at 13 32 55" src="https://user-images.githubusercontent.com/31866271/117646400-60aa9400-b194-11eb-8ba5-2862c2d9a9a7.png"><img width="250" alt="Screenshot 2021-05-10 at 13 33 01" src="https://user-images.githubusercontent.com/31866271/117646396-6011fd80-b194-11eb-9320-abeee9ed3b40.png">
+
 
 
 
