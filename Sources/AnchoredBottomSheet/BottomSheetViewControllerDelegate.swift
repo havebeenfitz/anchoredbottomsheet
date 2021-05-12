@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol BottomSheetViewControllerDelegate: class {
+public protocol BottomSheetViewControllerDelegate: AnyObject {
     func didDismiss()
 }

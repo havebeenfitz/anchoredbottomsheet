@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol BottomSheetViewDelegate: class {
+public protocol BottomSheetViewDelegate: AnyObject {
     func heightDidChange(to y: CGFloat)
     func shouldDismiss(sender: UIView)
 }

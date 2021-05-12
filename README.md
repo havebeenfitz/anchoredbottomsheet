@@ -73,7 +73,7 @@ AnchoredBottomSheet is available through [CocoaPods](https://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AnchoredBottomSheet', '~> 1.3.4'
+pod 'AnchoredBottomSheet', '~> 1.3.5'
 ```
 
 
@@ -91,7 +91,7 @@ $ brew install carthage
 To integrate AnchoredBottomSheet into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "havebeenfitz/anchoredbottomsheet" "1.3.4"
+github "havebeenfitz/anchoredbottomsheet" "1.3.5"
 ```
 
 Run `carthage update` to build the framework and drag the built `SnapKit.framework` into your Xcode project.
@@ -108,7 +108,7 @@ To integrate AnchoredBottomSheet into your Xcode project using Swift Package Man
 dependencies: [
     .package(
         url: "https://github.com/havebeenfitz/anchoredbottomsheet.git",
-        .upToNextMajor(from: "1.3.4")
+        .upToNextMajor(from: "1.3.5")
     )
 ]
 ```
