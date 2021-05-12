@@ -91,7 +91,7 @@ $ brew install carthage
 To integrate AnchoredBottomSheet into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "havebeenfitz/AnchoredBottomSheet" "1.3.3"
+github "havebeenfitz/anchoredbottomsheet" "1.3.3"
 ```
 
 Run `carthage update` to build the framework and drag the built `SnapKit.framework` into your Xcode project.
@@ -107,7 +107,7 @@ To integrate AnchoredBottomSheet into your Xcode project using Swift Package Man
 ```swift
 dependencies: [
     .package(
-        url: "https://github.com/havebeenfitz/AnchoredBottomSheet.git",
+        url: "https://github.com/havebeenfitz/anchoredbottomsheet.git",
         .upToNextMajor(from: "1.3.3")
     )
 ]
