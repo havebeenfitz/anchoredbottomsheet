@@ -12,7 +12,7 @@ This small library tries to achieve this goals:
   s.homepage         = 'https://github.com/havebeenfitz/AnchoredBottomSheet'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'havebeenfitz' => 'max.kraev@gmail.com' }
-  s.source           = { :git => 'https://github.com/havebeenfitz/AnchoredBottomSheet.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/havebeenfitz/anchoredbottomsheet.git', :tag => s.version.to_s }
   s.swift_versions   = '4.0', '5.0'
   s.ios.deployment_target = '10.0'
 
