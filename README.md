@@ -7,7 +7,7 @@
 ![Carthage](https://img.shields.io/badge/carthage-compatible-success)
 [![License](https://img.shields.io/cocoapods/l/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
 
-⚠️ Breaking changes in 1.0.0. `BottomSheetViewConfiguration` now expects an icon resource or `nil` instead of just bool flag
+⚠️ Breaking changes in 1.0.0. `BottomSheetViewConfiguration` now expects `UImage?` as close icon instead of bool flag
 
 ⚠️ SnapKit is no longer a dependency since 1.2.0
 
