@@ -9,9 +9,9 @@
 
 ⚠️ Breaking changes in 1.0.0. `BottomSheetViewConfiguration` now expects `UImage?` as close icon instead of bool flag
 
-✅ SnapKit is no longer a dependency since 1.2.0
+✅ [SnapKit](https://github.com/SnapKit/SnapKit) is no longer a dependency since 1.2.0
 
-🎉 ByContent anchor mode is available since 1.3.0. `BottomSheetView` can now resize itself to match the subviews content height as long as it's smaller than screen height
+🎉 `.byContent` anchor mode is available since 1.3.0. `BottomSheetView` can now resize itself to match the subviews content height as long as it's smaller than screen height
 
 ## About
 
