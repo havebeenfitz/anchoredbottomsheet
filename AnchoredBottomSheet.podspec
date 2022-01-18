@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AnchoredBottomSheet'
-  s.version          = '1.4'
+  s.version          = '1.4.1'
   s.summary          = 'iOS Maps like bottom sheet with configurable anchors and reusable pannable View'
 
   s.description      = <<-DESC
