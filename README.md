@@ -8,6 +8,7 @@
 [![License](https://img.shields.io/cocoapods/l/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
 
 ⚠️ iOS 10, 11 support dropped in 1.4.1
+
 ⚠️ Breaking changes in 1.0.0. `BottomSheetViewConfiguration` now expects `UImage?` as close icon instead of bool flag
 
 ✅ [SnapKit](https://github.com/SnapKit/SnapKit) is no longer a dependency since 1.2.0
