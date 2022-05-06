@@ -67,7 +67,9 @@ public class BottomSheetView: UIView {
         self.closeButtonIcon = configuration.closeButtonIcon
         self.isDismissAllowed = configuration.isDismissAllowed
         self.cornerRadius = configuration.cornerRadius
+        
         super.init(frame: CGRect.zero)
+        
         setup()
         addPanGesture()
         checkPositions()
@@ -80,7 +82,11 @@ public class BottomSheetView: UIView {
     override public func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = cornerRadius
+        
         pullIndicatorView.layer.cornerRadius = 2
+        if #available(iOS 13.0, *) {
+            pullIndicatorView.layer.cornerCurve = .continuous
+        }
     }
     
     
@@ -130,8 +136,8 @@ public class BottomSheetView: UIView {
             [
                 pullIndicatorView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
                 pullIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
-                pullIndicatorView.heightAnchor.constraint(equalToConstant: 3),
-                pullIndicatorView.widthAnchor.constraint(equalToConstant: 104)
+                pullIndicatorView.heightAnchor.constraint(equalToConstant: 4),
+                pullIndicatorView.widthAnchor.constraint(equalToConstant: 44)
             ]
             .forEach { $0.isActive = true }
 
