@@ -12,30 +12,37 @@ import AnchoredBottomSheet
 class SplitViewController: UIViewController {
     private let yellowView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemYellow
+        view.backgroundColor = .systemTeal
         return view
     }()
     
     private let accessibleButton: UIButton = {
         let button = UIButton()
         button.setTitle("Push me, I'm accessible", for: .normal)
-        button.backgroundColor = .blue
+        button.backgroundColor = .systemBlue
         button.setTitleColor(.darkGray, for: .highlighted)
+        button.titleEdgeInsets = .init(top: 0, left: 16, bottom: 0, right: 16)
+        button.layer.cornerRadius = 25
         return button
     }()
     
     private lazy var bottomSheetView: BottomSheetView = {
         let label = UILabel()
         label.text = "   Some content here"
-        let config = BottomSheetViewConfiguration(contentView: label,
-                                                  parentViewController: self,
-                                                  defaultPosition: .middle(),
-                                                  positions: [.top(), .middle(), .bottom()],
-                                                  isSlidingToAppear: false,
-                                                  isPullIndicatorNeeded: true,
-                                                  isDismissAllowed: false)
+        let config = BottomSheetViewConfiguration(
+            contentView: label,
+            parentViewController: self,
+            defaultPosition: .middle(),
+            positions: [.top(), .middle(), .bottom()],
+            isSlidingToAppear: false,
+            isPullIndicatorNeeded: true,
+            isDismissAllowed: false
+        )
         let view = BottomSheetView(configuration: config)
         view.delegate = self
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        }
         
         return view
     }()
@@ -64,7 +71,8 @@ class SplitViewController: UIViewController {
         [
             accessibleButton.centerXAnchor.constraint(equalTo: yellowView.centerXAnchor),
             accessibleButton.centerYAnchor.constraint(equalTo: yellowView.centerYAnchor),
-            accessibleButton.heightAnchor.constraint(equalToConstant: 50)
+            accessibleButton.heightAnchor.constraint(equalToConstant: 50),
+            accessibleButton.widthAnchor.constraint(equalToConstant: 250)
         ]
         .forEach { $0.isActive = true }
         
@@ -88,7 +96,9 @@ class SplitViewController: UIViewController {
 }
 
 extension SplitViewController: BottomSheetViewDelegate {
+    
     func heightDidChange(to y: CGFloat) {
         print("Height did change to: \(y)")
     }
+    
 }

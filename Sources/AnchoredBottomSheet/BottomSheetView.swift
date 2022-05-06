@@ -134,7 +134,7 @@ public class BottomSheetView: UIView {
             addSubview(pullIndicatorView)
             pullIndicatorView.translatesAutoresizingMaskIntoConstraints = false
             [
-                pullIndicatorView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+                pullIndicatorView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
                 pullIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
                 pullIndicatorView.heightAnchor.constraint(equalToConstant: 4),
                 pullIndicatorView.widthAnchor.constraint(equalToConstant: 44)

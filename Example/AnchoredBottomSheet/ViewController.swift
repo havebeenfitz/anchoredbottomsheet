@@ -55,15 +55,20 @@ class ViewController: UIViewController {
     }
     
     private func presentWithContentHeight() {
-        let configuration = BottomSheetViewConfiguration(contentView: data.tableView,
-                                                         parentViewController: self,
-                                                         defaultPosition: .byContent,
-                                                         positions: [.byContent],
-                                                         isPullIndicatorNeeded: true,
-                                                         closeButtonIcon: UIImage(named: "icon16Close"),
-                                                         isDismissAllowed: true)
+        let configuration = BottomSheetViewConfiguration(
+            contentView: data.tableView,
+            parentViewController: self,
+            defaultPosition: .byContent,
+            positions: [.byContent],
+            isPullIndicatorNeeded: true,
+            isDismissAllowed: true
+        )
         let bottomSheetView = BottomSheetView(configuration: configuration)
         let bottomSheetViewController = BottomSheetViewController(bottomSheetView: bottomSheetView)
+        
+        if #available(iOS 13.0, *) {
+            bottomSheetView.backgroundColor = .systemBackground
+        }
         
         bottomSheetViewController.delegate = self
         bottomSheetViewController.present(from: self)
@@ -71,18 +76,22 @@ class ViewController: UIViewController {
     
     func presentModalWithTableView() {
         
-        let configuration = BottomSheetViewConfiguration(contentView: data.tableView,
-                                                         parentViewController: self,
-                                                         defaultPosition: .middle(),
-                                                         positions: [.middle(), .top(), .bottom()],
-                                                         isPullIndicatorNeeded: true,
-                                                         closeButtonIcon: UIImage(named: "icon16Close"),
-                                                         isDismissAllowed: true)
+        let configuration = BottomSheetViewConfiguration(
+            contentView: data.tableView,
+            parentViewController: self,
+            defaultPosition: .middle(),
+            positions: [.middle(), .top(), .bottom()],
+            isPullIndicatorNeeded: true,
+            isDismissAllowed: true
+        )
         let bottomSheetView = BottomSheetView(configuration: configuration)
         let bottomSheetViewController = BottomSheetViewController(bottomSheetView: bottomSheetView)
         
         bottomSheetViewController.delegate = self
         bottomSheetViewController.present(from: self)
+        if #available(iOS 13.0, *) {
+            bottomSheetView.backgroundColor = .systemBackground
+        }
         
         data.tableView.reloadData()
     }
