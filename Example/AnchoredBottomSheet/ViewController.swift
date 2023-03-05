@@ -30,7 +30,11 @@ class ViewController: UIViewController {
     }
     
     private func setup() {
+        title = "Bottom sheets"
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+        
         view.addSubview(tableView)
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         [
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -75,7 +79,6 @@ class ViewController: UIViewController {
     }
     
     func presentModalWithTableView() {
-        
         let configuration = BottomSheetViewConfiguration(
             contentView: data.tableView,
             parentViewController: self,
@@ -141,4 +144,3 @@ extension ViewController: BottomSheetViewControllerDelegate {
         print("dismissed")
     }
 }
-

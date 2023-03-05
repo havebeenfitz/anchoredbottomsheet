@@ -7,14 +7,6 @@
 ![Carthage](https://img.shields.io/badge/carthage-compatible-success)
 [![License](https://img.shields.io/cocoapods/l/AnchoredBottomSheet.svg?style=flat)](https://cocoapods.org/pods/AnchoredBottomSheet)
 
-⚠️ iOS 10, 11 support dropped in 1.4.1
-
-⚠️ Breaking changes in 1.0.0. `BottomSheetViewConfiguration` now expects `UImage?` as close icon instead of bool flag
-
-✅ [SnapKit](https://github.com/SnapKit/SnapKit) is no longer a dependency since 1.2.0
-
-🎉 `.byContent` anchor mode is available since 1.3.0. `BottomSheetView` can now resize itself to match the subviews content height as long as it's smaller than screen height
-
 ## About
 
 ![demo](https://user-images.githubusercontent.com/31866271/167087146-5d2d1bb4-4f80-4c67-bd3d-1c39ac708518.gif)
@@ -75,7 +67,7 @@ AnchoredBottomSheet is available through [CocoaPods](https://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AnchoredBottomSheet', '~> 1.4.1'
+pod 'AnchoredBottomSheet', '~> 1.6.0'
 ```
 
 
@@ -93,7 +85,7 @@ $ brew install carthage
 To integrate AnchoredBottomSheet into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "havebeenfitz/anchoredbottomsheet" "1.4.1"
+github "havebeenfitz/anchoredbottomsheet" "1.6.0"
 ```
 
 Run `carthage update` to build the framework and drag the built `SnapKit.framework` into your Xcode project.
@@ -110,7 +102,7 @@ To integrate AnchoredBottomSheet into your Xcode project using Swift Package Man
 dependencies: [
     .package(
         url: "https://github.com/havebeenfitz/anchoredbottomsheet.git",
-        .upToNextMajor(from: "1.4.1")
+        .upToNextMajor(from: "1.6.0")
     )
 ]
 ```
