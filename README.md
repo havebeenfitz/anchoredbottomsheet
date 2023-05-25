@@ -1,7 +1,7 @@
 ![Untitled_Artwork 4](https://user-images.githubusercontent.com/31866271/117677140-dc1d3d00-b1b6-11eb-9b55-aade5409b006.png)
 
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=flat)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/havebeenfitz/anchoredbottomsheet/swift.yml?style=flat)](https://travis-ci.org/havebeenfitz/AnchoredBottomSheet)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/havebeenfitz/anchoredbottomsheet/swift.yml?style=flat)](https://github.com/havebeenfitz/anchoredbottomsheet/actions/workflows/swift.yml)
 ![SPM](https://img.shields.io/badge/spm-compatible-success)
 ![Carthage](https://img.shields.io/badge/carthage-compatible-success)
 ![License](https://img.shields.io/github/license/havebeenfitz/anchoredbottomsheet?style=flat)
