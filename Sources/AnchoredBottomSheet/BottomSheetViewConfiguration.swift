@@ -15,7 +15,7 @@ public class BottomSheetViewConfiguration {
     let parentViewController: UIViewController?
     /// Middle by default
     let defaultPosition: BottomSheetViewPosition
-    /// Avalilable positions
+    /// Available positions
     let positions: [BottomSheetViewPosition]
     /// Should slide from bottom or not
     let isSlidingToAppear: Bool

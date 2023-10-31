@@ -66,7 +66,7 @@ AnchoredBottomSheet is available through [CocoaPods](https://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AnchoredBottomSheet', '~> 1.6.2'
+pod 'AnchoredBottomSheet', '~> 1.6.3'
 ```
 
 
@@ -84,7 +84,7 @@ $ brew install carthage
 To integrate AnchoredBottomSheet into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "havebeenfitz/anchoredbottomsheet" "1.6.2"
+github "havebeenfitz/anchoredbottomsheet" "1.6.3"
 ```
 
 Run `carthage update` to build the framework and drag the built `SnapKit.framework` into your Xcode project.
@@ -93,7 +93,7 @@ Run `carthage update` to build the framework and drag the built `SnapKit.framewo
 
 [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
-> Xcode 11+ is required to build AnchoredBottomSheet using Swift Package Manager.
+> Xcode 14+ is required to build AnchoredBottomSheet using Swift Package Manager.
 
 To integrate AnchoredBottomSheet into your Xcode project using Swift Package Manager, add it to the dependencies value of your `Package.swift`:
 
@@ -101,7 +101,7 @@ To integrate AnchoredBottomSheet into your Xcode project using Swift Package Man
 dependencies: [
     .package(
         url: "https://github.com/havebeenfitz/anchoredbottomsheet.git",
-        .upToNextMajor(from: "1.6.2")
+        .upToNextMajor(from: "1.6.3")
     )
 ]
 ```
@@ -114,7 +114,7 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Requirements
 
-Xcode 12+, iOS deployment target ≥ 12
+Xcode 14+, iOS deployment target ≥ 12
 
 ## Author
 

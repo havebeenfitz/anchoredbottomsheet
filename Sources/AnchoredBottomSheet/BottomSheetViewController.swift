@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BottomSheetViewController: UIViewController {
+open class BottomSheetViewController: UIViewController {
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -39,7 +39,7 @@ public class BottomSheetViewController: UIViewController {
         addDismissOnActionEvent()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
