@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BottomSheetView: UIView {
+open class BottomSheetView: UIView {
     
     // MARK:- Interface
     
@@ -75,7 +75,7 @@ public class BottomSheetView: UIView {
         checkPositions()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

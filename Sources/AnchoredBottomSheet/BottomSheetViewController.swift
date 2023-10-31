@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BottomSheetViewController: UIViewController {
+open class BottomSheetViewController: UIViewController {
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
